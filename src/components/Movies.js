@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 
-export default function Movies({
-    allMovies,
 
-}) {
+export default function Movies({ allMovies }) {
 
 
     return (

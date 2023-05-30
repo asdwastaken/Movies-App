@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom";
 import { getAllMovieLikes, getOneMovie, getOneMovieLike, likeMovie, unlikeMovie } from "../services/movieService";
 import { useEffect, useState } from "react";
 
-export default function MovieDetails({
-    isLoggedIn,
-    token,
-}) {
+
+export default function MovieDetails( { isLoggedIn, token }) {
+
 
     const user = JSON.parse(localStorage.getItem('user'));
     const userId = user?._id;
@@ -37,7 +36,7 @@ export default function MovieDetails({
             .then(() => {
                 setLikedMovie(true)
                 getAllMovieLikes(movieId)
-                .then((result) => setAllMovieLikes(result))
+                    .then((result) => setAllMovieLikes(result))
             });
 
     }
@@ -48,7 +47,7 @@ export default function MovieDetails({
             .then(() => {
                 setLikedMovie(false)
                 getAllMovieLikes(movieId)
-                .then((result) => setAllMovieLikes(result))
+                    .then((result) => setAllMovieLikes(result))
             });
     }
 

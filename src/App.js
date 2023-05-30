@@ -30,6 +30,7 @@ function App() {
   const [searchMovies, setSearchMovies] = useState([]);
 
 
+
   useEffect(() => {
     const loggedUser = localStorage.getItem('user');
     if (loggedUser !== null) {
@@ -48,7 +49,10 @@ function App() {
   }, [])
 
 
+
+
   return (
+
     <div className="App">
       <Navbar setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} username={username} token={token} setSearchMovies={setSearchMovies} />
 
@@ -65,7 +69,7 @@ function App() {
           <Route path='/movies/drama' element={<DramaMovies allMovies={allMovies} />}></Route>
           <Route path='/movies/horror' element={<HorrorMovies allMovies={allMovies} />}></Route>
 
-          <Route path='/movies/search' element={<Search searchMovies={searchMovies}/>}></Route>
+          <Route path='/movies/search' element={<Search searchMovies={searchMovies} />}></Route>
 
           <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn} />} ></Route>
           <Route path='/register' element={<Register setIsLoggedIn={setIsLoggedIn} />}></Route>
@@ -75,6 +79,7 @@ function App() {
 
       </main>
     </div>
+
   );
 }
 
